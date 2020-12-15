@@ -1,8 +1,6 @@
 mod config;
 mod server;
 
-use server::{KrServerConfig,KrServer};
-
 #[cfg(test)]
 mod tests {
     use crate::server;
@@ -21,11 +19,7 @@ mod tests {
             instance_count: 1
         };
         let server = KrServer::new("server1".to_string(), config);
-        for stream in server.incoming() {
-            let stream = stream.unwrap();
 
-            println!("Connection established!");
-        }
     }
 }
 

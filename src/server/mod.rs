@@ -1,4 +1,3 @@
-use actix_web::{web, App, HttpRequest, HttpServer, Responder};
 use std::net::TcpListener;
 
 #[derive(Debug)]
@@ -29,7 +28,11 @@ impl KrServer{
     }
 
     // method to start listening
-    fn listener_start(&self) {
-        unimplemented!()
+    fn listener_start(listener: TcpListener) {
+        for stream in listener.incoming() {
+            let stream = stream.unwrap();
+
+            println!("Connection established!");
+        }
     }
 }
