@@ -18,8 +18,9 @@ mod tests {
             server_address: ("127.0.0.1:7878".to_string()),
             instance_count: 1
         };
-        let server = KrServer::new("server1".to_string(), config);
+        let mut server:KrServer = KrServer::new("server1".to_string(), config);
 
+        server.listener_start();
     }
 }
 
